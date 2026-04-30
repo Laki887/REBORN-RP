@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Правила группировок | S.T.A.L.K.E.R. RP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0c10;
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            color: #e6e9f0;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+        }
+
+        /* атмосферный фон */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(30, 35, 45, 0.7) 0%, rgba(0, 0, 0, 0.95) 90%),
+                              repeating-linear-gradient(0deg, rgba(80, 80, 100, 0.08) 0px, rgba(80, 80, 100, 0.08) 1px, transparent 1px, transparent 4px);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: rgba(18, 22, 28, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 2rem 2rem 3rem 2rem;
+            box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(80, 85, 100, 0.3);
+        }
+
+        /* шапка с логотипом/названием */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #e6e9f0 0%, #c7aa4a 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #9aa4bf;
+            margin-top: 0.5rem;
+        }
+
+        /* сетка фракций */
+        .factions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: #13171f;
+            border-radius: 1.5rem;
+            border-left: 6px solid #d4af37;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 30px -10px black;
+            border-left-color: #e6b422;
+        }
+
+        .card-header {
+            background: #1b212a;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #2c3540;
+        }
+
+        .card-header h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #f5e7b2;
+        }
+
+        .card-body {
+            padding: 1.2rem 1.5rem 1.8rem;
+            font-size: 0.95rem;
+            color: #cfd6e6;
+        }
+
+        .card-body ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+
+        .card-body li {
+            margin: 0.6rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #2a2f3a;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: #c0aa5a;
+            margin-top: 0.8rem;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #4a5568, #d4af37, #4a5568, transparent);
+            margin: 2rem 0;
+        }
+
+        .global-rules {
+            background: #0e1219;
+            border-radius: 1.8rem;
+            padding: 1.6rem 2rem;
+            margin-top: 1rem;
+            border: 1px solid #2b313e;
+        }
+
+        .global-rules h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #eedb9b;
+        }
+
+        .global-rules ol, .global-rules ul {
+            margin-left: 1.6rem;
+        }
+
+        .global-rules li {
+            margin: 0.7rem 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: #6e7a93;
+            border-top: 1px dashed #2a2f3c;
+            padding-top: 1.8rem;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1rem;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .card-header h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⚡ NEW WORLD | STALKER RP</h1>
+        <p>Устав фракций — Устав Зоны. Выбери свой путь, сталкер.</p>
+    </div>
+
+    <!-- СЕТКА ГРУППИРОВОК (ЗАМЕНИТЕ ТЕКСТ НА СВОИ ПРАВИЛА) -->
+    <div class="factions-grid">
+        <div class="card">
+            <div class="card-header"><h2>☢️ ДОЛГ</h2></div>
+            <div class="card-body">
+                <p><strong>Дисциплина. Порядок. Защита.</strong> Военизированное крыло, стремящееся изолировать Зону.</p>
+                <ul>
+                    <li>📌 Безусловное подчинение приказам командира.</li>
+                    <li>📌 Запрет на контрабанду артефактов гражданским.</li>
+                    <li>📌 Ежедневная поверка в 20:00 по зонному времени.</li>
+                </ul>
+                <div class="badge">+ репутация у военных</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h2>🍃 СВОБОДА</h2></div>
+            <div class="card-body">
+                <p><strong>Свобода выбора — превыше всего.</strong> Анархисты и исследователи аномалий.</p>
+                <ul>
+                    <li>📌 Не мешай другим сталкерам исследовать Зону.</li>
+                    <li>📌 Запрещены внутренние драки на территории базы.</li>
+                    <li>📌 Любой трофей — твой, но делиться информацией обязательно.</li>
+                </ul>
+                <div class="badge">торговля артефактами без пошлин</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h2>⚔️ НАЁМНИКИ</h2></div>
+            <div class="card-body">
+                <ul>
+                    <li>📌 Контракт — святое. Невыполнение заказа = изгнание.</li>
+                    <li>📌 Не вступайте в конфликты без оплаты.</li>
+                    <li>📌 Кодекс молчания о заказчике.</li>
+                </ul>
+                <div class="badge">💰 оплата в евро / артефактах</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h2>👁️ МОНОЛИТ</h2></div>
+            <div class="card-body">
+                <ul>
+                    <li>📌 Воля Монолита — закон. Неповиновение карается мгновенно.</li>
+                    <li>📌 Запрещено покидать группу без ритуала очищения.</li>
+                    <li>📌 Артефакты только для жертвоприношений.</li>
+                </ul>
+                <div class="badge">🔮 связь с Выжженным Лесом</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h2>🧪 УЧЁНЫЕ / ОБУ</h2></div>
+            <div class="card-body">
+                <ul>
+                    <li>📌 Сохранять нейтралитет, если не атакуют первыми.</li>
+                    <li>📌 Научные данные — приоритет №1.</li>
+                    <li>📌 Сопровождение караванов — обязательно для полевых групп.</li>
+                </ul>
+                <div class="badge">🔬 доступ к уникальным протоколам</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h2>☁️ ЧИСТОЕ НЕБО</h2></div>
+            <div class="card-body">
+                <ul>
+                    <li>📌 Изучение аномалий, не нарушая баланс Зоны.</li>
+                    <li>📌 Запрещено убивать зверей-мутантов без крайней нужды.</li>
+                    <li>📌 Помощь новичкам, попавшим в аномалии.</li>
+                </ul>
+                <div class="badge">🌿 гайды по выживанию</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h2>♟️ РЕНЕГАТЫ</h2></div>
+            <div class="card-body">
+                <ul>
+                    <li>📌 Единственный закон — сила и хитрость.</li>
+                    <li>📌 Предательство клана карается смертью.</li>
+                    <li>📌 Набеги только в маскировке.</li>
+                </ul>
+                <div class="badge">⚠️ вне закона для большинства фракций</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h2>🍺 ЛЮДИ БАРА / НЕЙТРАЛЫ</h2></div>
+            <div class="card-body">
+                <ul>
+                    <li>📌 Свободная торговля, никакой политики.</li>
+                    <li>📌 Не впутываться в войны группировок.</li>
+                    <li>📌 Уважай чужой товар и территорию.</li>
+                </ul>
+                <div class="badge">🎲 скидка 5% в баре 100 радиаций</div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- ОБЩИЕ ПРАВИЛА ПРОЕКТА (скопировано с исходного стиля) -->
+    <div class="global-rules">
+        <h3>📜 ЗАКОНЫ ЗОНЫ (общие для всех)</h3>
+        <ol>
+            <li><strong>Уважай других игроков:</strong> никаких оскорблений, токсичности или целенаправленных провокаций в общем чате.</li>
+            <li><strong>No Metagaming / Powergaming:</strong> используй только ту информацию, которую твой персонаж узнал внутри ролевой игры.</li>
+            <li><strong>PvP-ситуации:</strong> боестолкновения только с согласия обеих сторон или в рамках квестов/рейдов.</li>
+            <li><strong>Территории группировок:</strong> без разрешения лидера фракции находиться в закрытых зонах запрещено.</li>
+            <li><strong>Нарушения:</strong> варн → временный бан → перманентный бан (решение принимает совет группировок).</li>
+        </ol>
+        <p style="margin-top: 1rem; background: #1e232c; padding: 0.8rem; border-radius: 20px;">⚠️ Администрация оставляет за собой право блокировать аккаунты за читерство, оскорбления членов группы или попытку взлома.</p>
+    </div>
+
+    <footer>
+        ⚡ New World | S.T.A.L.K.E.R RolePlay — свободная Зона. <br>
+        Дизайн адаптирован под ПК и мобильные устройства. Правила версии 2.4 | 2026
+    </footer>
+</div>
+</body>
+</html>
