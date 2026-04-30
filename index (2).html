@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила проекта | S.T.A.L.K.E.R. | DayZ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0f1113;
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            color: #ddd9c9;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+        }
+
+        /* Атмосферный фон */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 30% 20%, rgba(35, 40, 45, 0.6) 0%, #0a0c0f 90%),
+                              repeating-linear-gradient(0deg, rgba(100, 80, 60, 0.1) 0px, rgba(100, 80, 60, 0.1) 1px, transparent 1px, transparent 6px);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(20, 24, 30, 0.85);
+            backdrop-filter: blur(3px);
+            border-radius: 2rem;
+            padding: 2rem 2rem 3rem 2rem;
+            box-shadow: 0 20px 35px -12px black, inset 0 1px 0 rgba(255, 235, 180, 0.08);
+            border: 1px solid #3e3a35;
+        }
+
+        /* Шапка */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #b87c3c;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #f5e7c8 0%, #c9984a 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .header p {
+            font-size: 0.9rem;
+            color: #b6aa8f;
+            margin-top: 0.5rem;
+        }
+
+        /* Блок правил */
+        .rules-section {
+            background: #161b22cc;
+            border-radius: 1.5rem;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #b87c3c;
+        }
+
+        .rules-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+            color: #ecd9b4;
+            letter-spacing: -0.3px;
+        }
+
+        .rules-section h3 {
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.8rem 0;
+            color: #cfb27c;
+            border-left: 3px solid #b87c3c;
+            padding-left: 12px;
+        }
+
+        .rules-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .rules-list li {
+            margin: 0.9rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .rules-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #b87c3c;
+        }
+
+        .important {
+            background: #1e1f24;
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            margin-top: 1.2rem;
+            border: 1px solid #b87c3c55;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.75rem;
+            color: #7a6f5a;
+            border-top: 1px solid #2e2a24;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.2rem;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .rules-section {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⚡ S.T.A.L.K.E.R. | DayZ RP</h1>
+        <p>Зона не прощает ошибок. Знай правила — выживай дольше.</p>
+    </div>
+
+    <!-- ОБЩИЕ ПОЛОЖЕНИЯ -->
+    <div class="rules-section">
+        <h2>📜 Раздел I. Общее положение</h2>
+        <ul class="rules-list">
+            <li>Все правила обязательны к соблюдению для игры на сервере. Начиная играть на проекте, вы автоматически соглашаетесь с ними.</li>
+            <li>Незнание правил не освобождает от ответственности. Нарушение влечёт санкции вплоть до перманентной блокировки.</li>
+            <li>Администрация возвращает утраченные вещи только при наличии значительных оснований и подтверждённых доказательств (фото/видео).</li>
+            <li>Грубость и неуважение к РП-куратору может привести к бану без детального рассмотрения. Проявляйте взаимное уважение.</li>
+            <li>Жалоба на действия куратора подаётся через тикет с приложением доказательств.</li>
+            <li>Для обвинения игрока необходимо предоставить немонтированное видео, начинающееся за 5 минут до инцидента.</li>
+        </ul>
+        <div class="important">
+            ⚠️ <strong>Важно:</strong> Запрещено использование более одного аккаунта (мультиаккаунты). Нарушение карается перманентной блокировкой без права амнистии.
+        </div>
+    </div>
+
+    <!-- ЗАПРЕЩЁННОЕ ПО / ЧИТЫ -->
+    <div class="rules-section">
+        <h2>🛡️ Раздел II. Честная игра</h2>
+        <ul class="rules-list">
+            <li><strong>Запрещено использование стороннего ПО:</strong> читы, макросы, модификации файлов игры, плагины для доступа к закрытым каналам Discord.</li>
+            <li>Наличие таких программ на ПК — основание для перманентной блокировки.</li>
+            <li><strong>Покупка или попытка приобретения подобного ПО</strong> также влечёт перманентную блокировку.</li>
+            <li>Попытка совершить нарушение приравнивается к самому нарушению.</li>
+        </ul>
+    </div>
+
+    <!-- ПОВЕДЕНИЕ В ИГРЕ И DISCORD -->
+    <div class="rules-section">
+        <h2>🎙️ Раздел III. Поведение и связь</h2>
+        <ul class="rules-list">
+            <li>Запрещено присутствовать на сервере в состоянии алкогольного или наркотического опьянения, а также в неадекватном состоянии.</li>
+            <li>Вся голосовая и текстовая связь — только через официальный Discord сервера.</li>
+            <li>Игроки обязаны находиться в назначенных голосовых каналах Discord во время игры.</li>
+            <li>Члены группировок должны быть в голосовом канале своей группировки, даже если нет возможности разговаривать.</li>
+            <li>Использование саундпада разрешено, если оно строго соответствует рамкам ролевой игры (РП).</li>
+        </ul>
+    </div>
+
+    <!-- НИКНЕЙМЫ И АЙТИ -->
+    <div class="rules-section">
+        <h2>👤 Раздел IV. Никнеймы и идентификация</h2>
+        <ul class="rules-list">
+            <li>Никнейм в игре и в Discord должен быть одинаковым.</li>
+            <li>Изменение никнейма без смены персонажа путём РПК запрещено.</li>
+            <li>Запрещено использование излишних символов и цифр.</li>
+            <li>Никнейм в лаунчере пишется латиницей по правилам транслитерации.</li>
+            <li>Запрещены никнеймы, содержащие нецензурные, оскорбительные выражения.</li>
+            <li>Использование легендарных позывных из серии S.T.A.L.K.E.R. запрещено. Никнейм должен соответствовать атмосфере и сеттингу.</li>
+        </ul>
+        <div class="important">
+            📌 <strong>Пример правильного нейминга:</strong> “Вася” в Discord → “Vasya” в лаунчере.
+        </div>
+    </div>
+
+    <!-- ДОПОЛНИТЕЛЬНО -->
+    <div class="rules-section">
+        <h2>❗ Раздел V. Ответственность</h2>
+        <ul class="rules-list">
+            <li>Администрация проекта оставляет за собой право блокировать аккаунты за любые нарушения, указанные в правилах.</li>
+            <li>Спорные ситуации решаются на основе предоставленных видеодоказательств.</li>
+            <li>По требованию администрации вы обязаны изменить свой никнейм в случае его несоответствия правилам.</li>
+        </ul>
+    </div>
+
+    <footer>
+        ⚡ S.T.A.L.K.E.R. | DayZ RP — Зов Припяти. <br>
+        Правила актуальны на 2026 год. Незнание не освобождает от наказания.
+    </footer>
+</div>
+</body>
+</html>
