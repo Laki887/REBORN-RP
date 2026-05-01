@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Полный устав и правила сервера REBORN | S.T.A.L.K.E.R RolePlay. Термины, принципы, фракции, PvP, гоп-стоп, РП-смерть и анимированный счётчик Гейгера.">
+    <meta name="keywords" content="STALKER RP, устав, правила, сталкер, группировки, зона, радиация, гейгер">
+    <meta name="author" content="REBORN RP Team">
+    <meta name="theme-color" content="#0a0c10">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23222' stroke='%23b8860b' stroke-width='3'/%3E%3Cpath d='M30 40 L70 40 L65 70 L35 70 Z' fill='%23b8860b'/%3E%3Ccircle cx='50' cy='55' r='8' fill='%23000'/%3E%3C/svg%3E">
+    <title>REBORN | S.T.A.L.K.E.R RP — Официальный устав Зоны</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #030507;
+            font-family: 'Courier New', 'Roboto Mono', 'Fira Code', 'Segoe UI', monospace;
+            color: #cdd6e0;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjMjIyYTMwIiBmaWxsLW9wYWNpdHk9IjAuMTUiIGQ9Ik0wIDBoNDB2NDBIMHoiLz48cGF0aCBkPSJNMjAgMTBhMTAgMTAgMCAwIDEgMTAgMTAgMTAgMTAgMCAwIDEtMTAgMTAgMTAgMTAgMCAwIDEtMTAtMTAgMTAgMTAgMCAwIDEgMTAtMTB6bTAgMmE4IDggMCAwIDAgLTggOCA4IDggMCAwIDAgOCA4IDggOCAwIDAgMCA4LTggOCA4IDAgMCAwLTgtOHoiIGZpbGw9IiM0ZjU2MGIiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+'), 
+                              repeating-linear-gradient(45deg, rgba(10,15,10,0.8) 0px, rgba(10,15,10,0.8) 2px, rgba(30,35,22,0.4) 2px, rgba(30,35,22,0.4) 8px);
+            background-repeat: repeat, repeat;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.7), inset 0 0 20px rgba(80,50,20,0.5);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            background: rgba(8, 12, 10, 0.88);
+            backdrop-filter: blur(3px);
+            border-radius: 2rem;
+            padding: 2rem 2rem 3rem 2rem;
+            box-shadow: 0 25px 45px -12px black, inset 0 1px 0 rgba(210,180,60,0.2);
+            border: 1px solid #5e4b2e;
+            position: relative;
+        }
+
+        .container::before, .container::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #8b6b3d;
+            opacity: 0.35;
+            pointer-events: none;
+        }
+        .container::before {
+            top: 15px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+        }
+        .container::after {
+            bottom: 15px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #b8860b;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .header h1 {
+            font-family: 'Courier New', 'Impact', monospace;
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #f5e7c8 0%, #c8a85f 70%, #7a5c2e 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 8px rgba(0,0,0,0.8);
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #b9b07e;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+            background: rgba(0,0,0,0.5);
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            backdrop-filter: blur(2px);
+        }
+
+        /* радиационный бадж */
+        .rad-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2f2a1f;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: monospace;
+            color: #8bc34a;
+            box-shadow: 0 0 8px #588c2e;
+            border: 1px solid #6a994e;
+            z-index: 999;
+            backdrop-filter: blur(8px);
+            letter-spacing: 1px;
+            transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+        .rad-badge.high {
+            background: #5a2e1f;
+            color: #ffaa66;
+            box-shadow: 0 0 12px #ff6600;
+            border-color: #ff884d;
+        }
+        .rad-badge.critical {
+            background: #8b2a1a;
+            color: #ffd966;
+            box-shadow: 0 0 18px #ff3300;
+            border-color: #ff884d;
+            animation: pulse-red 0.5s infinite alternate;
+        }
+        @keyframes pulse-red {
+            from { text-shadow: 0 0 2px red; box-shadow: 0 0 8px #ff3300; }
+            to { text-shadow: 0 0 12px #ff5e00; box-shadow: 0 0 20px #ff2200; }
+        }
+        .rad-badge .radiation-value {
+            font-weight: 900;
+            font-size: 1.2rem;
+            display: inline-block;
+            min-width: 55px;
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            border-radius: 20px;
+            padding: 0 4px;
+            margin-left: 5px;
+        }
+        .rad-badge::before {
+            content: "☢ ";
+            font-size: 16px;
+        }
+
+        /* кнопка гейгера */
+        .geiger-button {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #2a241ae0;
+            border: 1px solid #b8860b;
+            color: #e0bc78;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 6px 14px;
+            border-radius: 40px;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: 0.2s;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .geiger-button:hover {
+            background: #b8860b;
+            color: #0f0e09;
+            box-shadow: 0 0 10px #ffaa33;
+        }
+        .geiger-button.active {
+            background: #6e4c1e;
+            border-color: #ffbb55;
+            color: #ffe1a0;
+        }
+
+        .rule-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            border-bottom: 1px solid #4e3e2a;
+            padding-bottom: 1.2rem;
+        }
+        .rule-nav a {
+            background: #1a1f18e0;
+            padding: 0.4rem 1.1rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-family: monospace;
+            color: #deb887;
+            text-decoration: none;
+            transition: 0.2s;
+            border-left: 3px solid #b8860b;
+            border-right: 1px solid #4a3a20;
+        }
+        .rule-nav a:hover {
+            background: #b8860b;
+            color: #0b0f0a;
+            transform: translateY(-2px);
+        }
+
+        .rules-section {
+            background: #0c100ce0;
+            border-radius: 1.2rem;
+            padding: 1.3rem 2rem;
+            margin-top: 2rem;
+            border: 1px solid #5c4b2c;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 5px 12px rgba(0,0,0,0.3);
+        }
+        .rules-section h2 {
+            font-size: 1.7rem;
+            margin-bottom: 0.8rem;
+            color: #e2c28b;
+            border-left: 6px solid #c99e3a;
+            padding-left: 1rem;
+            text-transform: uppercase;
+        }
+        .rules-section h3 {
+            font-size: 1.3rem;
+            margin: 1.2rem 0 0.5rem 0;
+            color: #cfb277;
+            border-bottom: 1px dashed #7a6440;
+            display: inline-block;
+        }
+        .rules-section ul, .rules-section ol {
+            margin-left: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .rules-section li {
+            margin: 0.5rem 0;
+            line-height: 1.45;
+            list-style: none;
+            padding-left: 1.6rem;
+            position: relative;
+        }
+        .rules-section ul li::before {
+            content: "➤";
+            color: #b68b40;
+            position: absolute;
+            left: 0;
+        }
+        .rules-section ol {
+            counter-reset: stalker;
+        }
+        .rules-section ol li {
+            counter-increment: stalker;
+            padding-left: 2rem;
+        }
+        .rules-section ol li::before {
+            content: "[" counter(stalker) "]";
+            color: #e2b86b;
+            position: absolute;
+            left: 0;
+        }
+
+        .badge-rule {
+            display: inline-block;
+            background: #1c241b;
+            padding: 0.2rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #e5bc72;
+            margin-left: 0.5rem;
+            border: 1px solid #7f643b;
+        }
+
+        .faction-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .faction-card {
+            background: rgba(0, 0, 0, 0.55);
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            border-left: 6px solid #b8860b;
+            backdrop-filter: blur(2px);
+            transition: 0.2s;
+        }
+        .faction-card:hover {
+            background: rgba(20, 20, 12, 0.75);
+            border-left-color: #e6b650;
+        }
+        .faction-card h3 {
+            margin-bottom: 0.6rem;
+            font-size: 1.45rem;
+            color: #eed58c;
+        }
+        .faction-card .faction-note {
+            font-style: italic;
+            color: #b6a267;
+            border-top: 1px dashed #5e4f32;
+            padding-top: 0.5rem;
+            margin-top: 0.6rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.7rem;
+            color: #8e8364;
+            border-top: 1px dashed #55462e;
+            padding-top: 1.5rem;
+        }
+
+        .stamp {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            opacity: 0.2;
+            font-family: monospace;
+            font-size: 12px;
+            background: black;
+            padding: 2px 8px;
+            rotate: -8deg;
+            color: #a98747;
+            pointer-events: none;
+        }
+
+        ::-webkit-scrollbar { width: 8px; background: #151e14; }
+        ::-webkit-scrollbar-thumb { background: #8b6b3d; border-radius: 10px; }
+        ::selection { background: #7c632f; color: #151e14; }
+
+        @media (max-width: 750px) {
+            .container { padding: 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .rad-badge { font-size: 11px; padding: 3px 12px; bottom: 12px; right: 12px; }
+            .geiger-button { bottom: 70px; right: 12px; font-size: 10px; padding: 4px 10px; }
+            .rules-section { padding: 1rem 1.2rem; }
+            .rule-nav a { font-size: 0.65rem; padding: 0.25rem 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="rad-badge" id="radBadge">
+    <span>РАДИАЦИЯ</span>
+    <span class="radiation-value" id="radiationValue">3.6</span>
+    <span>Р/Ч</span>
+</div>
+<button class="geiger-button" id="geigerToggleBtn">📡 Активировать счётчик Гейгера</button>
+
+<div class="container">
+    <div class="header">
+        <h1>⚡ REBORN | S.T.A.L.K.E.R RP</h1>
+        <p>УСТАВ ЗОНЫ ОТЧУЖДЕНИЯ — ПОЛНЫЙ КОДЕКС ВЫЖИВАНИЯ</p>
+        <div class="stamp">ЗОНА НЕ ПРОЩАЕТ ОШИБОК</div>
+    </div>
+
+    <div class="rule-nav">
+        <a href="#terminology">Термины</a><a href="#principles">Принципы</a><a href="#warning-shot">Предупредительный</a>
+        <a href="#rules-add">Доп.правила</a><a href="#rp-death">РП-смерть</a><a href="#greens">Зеленые зоны</a>
+        <a href="#raids">Рейды</a><a href="#assaults">Штурмы</a><a href="#capture">Плен/Пытки</a>
+        <a href="#gopstop">Гоп-стоп</a><a href="#factions">Группировки</a><a href="#faction-charters">Устав фракций</a>
+    </div>
+
+    <div id="terminology" class="rules-section">
+        <h2>📖 Терминология Зоны</h2>
+        <ul>
+            <li><strong>Roleplay (RP)</strong> — полное погружение в роль сталкера: характер, мотивы, страхи.</li>
+            <li><strong>NonRP</strong> — любые действия, разрушающие атмосферу (спавн, "прочекай", мемы).</li>
+            <li><strong>Leave RolePlay (LRP)</strong> — выход с сервера ради ухода от РП-ситуации (выброс, мутанты, бой).</li>
+            <li><strong>NewLifeRule (NLR)</strong> — после тяжёлого ранения 30 минут в ЗЗ, полное забывание обстоятельств гибели, возврат в бой через 1 час.</li>
+            <li><strong>Power Gaming (PG)</strong> — отсутствие страха смерти, нападение на превосходящие силы, самоубийственные действия.</li>
+            <li><strong>MetaGaming</strong> — использование информации из дискорда, стримов, "со стороны".</li>
+            <li><strong>RDM (Random Death Match)</strong> — убийство без РП-взаимодействия и причины.</li>
+            <li><strong>Зелёные зоны (33)</strong> — территории под защитой метабойцев, запрет на вооружённые конфликты.</li>
+            <li><strong>Role Play Kill (РПК)</strong> — необратимая смерть персонажа с обнулением квенты, позывного и отыгрыша.</li>
+        </ul>
+    </div>
+
+    <div id="principles" class="rules-section">
+        <h2>⚙️ Кодекс выживания (основы)</h2>
+        <ol>
+            <li>Игроки младше 16 лет — только с разрешения куратора группировки.</li>
+            <li>Администрация не обязана раскрывать внутреннюю информацию.</li>
+            <li>Восстановление вещей — только при видеофиксации бага/РДМ сервера.</li>
+            <li>Куратор вправе остановить РП-процесс при нарушении правил.</li>
+            <li>Запрещено получение информации нечестным путём.</li>
+            <li>Хамство/неуважение к кураторам → бан.</li>
+            <li>Жалоба на куратора — вышестоящей администрации, при доказательстве куратор получает взыскание.</li>
+            <li>Срок жалобы — 3 часа с момента ситуации.</li>
+            <li>Доказательство — только видео без монтажа (5 минут до инцидента + сам инцидент).</li>
+            <li>Администрация может принять решение, противоречащее правилам, с обоснованием</li>
+            <li><strong>Мультиаккаунты — перманентная блокировка всех аккаунтов.</strong> Один персонаж на аккаунт.</li>
+        </ol>
+        <p><span class="badge-rule">📹 ВИДЕО — ГЛАВНЫЙ АРГУМЕНТ</span> <span class="badge-rule">🚫 НУЛЕВАЯ ТЕРПИМОСТЬ К ЧИТАМ</span></p>
+    </div>
+
+    <div id="warning-shot" class="rules-section">
+        <h2>🔫 Предупредительный выстрел (ПВ)</h2>
+        <ul>
+            <li>Только одиночный выстрел БЕЗ ГЛУШИТЕЛЯ, обязательно крик (3 палки войса) и 3 выстрела в воздух с интервалом 10 сек.</li>
+            <li>Радиус слышимости — 45м, выстрел виден 100м. После ПВ, если цель не среагировала — через 5 сек огонь на поражение.</li>
+            <li>Выстрел под ноги, если жертва не поняла. Руки вверх / оружие за спину — отмена огня.</li>
+            <li>Глушитель, граната, выстрел в тело НЕ считаются предупредительным.</li>
+            <li>Попытка бегства после ПВ — вина беглеца.</li>
+        </ul>
+    </div>
+
+    <div id="rules-add" class="rules-section">
+        <h2>📜 Дополнительные положения Зоны</h2>
+        <ul>
+            <li>Игнорирование выживания и халатное отношение к жизни — запрещено (PG).</li>
+            <li>NonRP фразы типа «спавниться», «прочекай», «боги зоны» — караются.</li>
+            <li>Экзоскелет — только с формой ТБ. Не более 3 на ГП (Наёмники/ЧР — 4).</li>
+            <li>Полный комплект СЕВА / ТБС обязателен. Снимать/одевать разрешено только технику/учёному.</li>
+            <li>После рестарта сервера — 15 минут на загрузку, запрещено убивать, брать в плен, бежать из плена.</li>
+            <li>Запрещены текстуры-простенки (колючка, не простреливаемые объекты).</li>
+            <li>Разделка человеческих трупов = бан, закапывать лопатой — можно.</li>
+            <li>Ношение шлемов поверх капюшонов — нарушение лора.</li>
+            <li>Члены ГП обязаны носить шеврон на плече (исключение — скрытые ГП).</li>
+            <li>LRP: выход во время боя/мутантов/плена → наказание.</li>
+            <li>Power Gaming: нападение на группу с превосходством "в 2 раза+1" без страха — смерть признается PG.</li>
+            <li>Метагейминг строжайше запрещён, вплоть до бана ГП.</li>
+            <li>Именное снаряжение (позывные, названия ГП) запрещено, крафт маскировочных костюмов — нет.</li>
+            <li>Запрещены дропшоты с пропуском анимации, "лунная походка", QE на AD.</li>
+        </ul>
+    </div>
+
+    <div id="rp-death" class="rules-section">
+        <h2>💀 РП-смерть (РПК)</h2>
+        <ul>
+            <li>При РПК полная смена личности: новый позывной, квента, обнуление всех связей. Блок входа 24 часа.</li>
+            <li>Причины: РП-казнь, вывоз за периметр, гибель при побеге, дезертирство, согласие игрока.</li>
+            <li>Казнь фиксируется на видео, отправляется куратору.</li>
+            <li>Основания: месть за РПК члена ГП, шпионаж, охота на ГП, серьёзное оскорбление, отказ выкупа.</li>
+            <li>Идентификация личности: минимум 10 минут общения без маски + уточняющие вопросы. Шеврон недостаточен.</li>
+            <li>Перед казнью зачитывается причина, даётся последнее слово.</li>
+        </ul>
+    </div>
+
+    <div id="greens" class="rules-section">
+        <h2>🌿 Зеленые зоны (33)</h2>
+        <ul>
+            <li>Деревня новичков, Янов, Бар — нейтральные 33, вооружённые конфликты и гоп-стоп ЗАПРЕЩЕНЫ.</li>
+            <li>Кемп у баз и 33 (200м) — запрещён. На 33 разрешены только кулачные бои (без тяжёлых ранений).</li>
+            <li>Кража на 33 = РПК, метабойцы не допускают.</li>
+            <li>33 ОКСОП не открывается (можно целиться, но стрелять без открытия нельзя).</li>
+        </ul>
+    </div>
+
+    <div id="raids" class="rules-section">
+        <h2>🔥 Правила рейдов</h2>
+        <ul>
+            <li>Рейд запрещён с 2:00 до 7:00 МСК. Обязательна РП-причина, согласованная куратором.</li>
+            <li>Минимум 5 участников от атакующих, максимум 20. Атакующие собираются в 250м от базы и выдвигают требования в общий КПК.</li>
+            <li>Время рейда — до 1.5 часов. Запрещено подкрепление после начала.</li>
+            <li>Победители получают 15 минут на трофеи. На одну базу — 1 рейд в 14 дней.</li>
+        </ul>
+    </div>
+
+    <div id="assaults" class="rules-section">
+        <h2>⚡ Штурмы (освобождение, плен)</h2>
+        <ul>
+            <li>Причины: вызволение пленников, взятие важной цели, кража разработок. Обязательно одобрение курации.</li>
+            <li>Мин. 5 участников с каждой стороны, макс. 15. Длительность — 1 час.</li>
+            <li>Не чаще 1 раза в неделю. Убитые выходят до конца штурма.</li>
+            <li>При освобождении заложник обязан следовать за отрядом в пределах 10м.</li>
+        </ul>
+    </div>
+
+    <div id="capture" class="rules-section">
+        <h2>⛓️ Пленение, допросы, пытки и выкуп</h2>
+        <ul>
+            <li><strong>Пленение:</strong> при сдаче или бессознательном состоянии. ГП обязана кормить/поить/лечить. Максимум 2 часа в КПЗ.</li>
+            <li><strong>Допрос:</strong> видеофиксация, запрещена физическая сила на допросе, разрешена сыворотка правды (до 3 вопросов да/нет).</li>
+            <li><strong>Пытка:</strong> только при доказанной лжи, не более 2 эпизодов за пленение, без членовредительства.</li>
+            <li><strong>Выкуп:</strong> рядовой до 500к, зам до 1 млн, лидер до 1.5 млн. Время на сбор — 1-3 часа.</li>
+            <li>Дезертирство требует администрирования, 15 часов онлайна за 7 дней, форма ГП 7 дней.</li>
+            <li>Идентификация: "2+2=3,6" — правильный ответ для проверки контужены/не контужены.</li>
+        </ul>
+    </div>
+
+    <div id="gopstop" class="rules-section">
+        <h2>💰 Гоп-стоп &amp; имущество</h2>
+        <ul>
+            <li>Гоп-стоп — принудительное изъятие имущества с откатом РП. Начинается с приказа+предупредительный выстрел.</li>
+            <li>На Кордоне грабёж запрещён (кроме насыпи в сторону Свалки).</li>
+            <li>Группировки могут изымать форму с символикой (не гоп-стоп). Фанатики уничтожают артефакты на глазах.</li>
+            <li>Разрешено забирать до 50% медицины, менять снаряжение по принципу "оружие на оружие". Патроны строго лимит: 4 магазина пистолетных, 60 для дроба, 2 магазина автоматных.</li>
+        </ul>
+        <h3>🚗 Транспорт и связь</h3>
+        <ul>
+            <li>Чужие машины открывать запрещено (РП-блокировка). Огонь по ТС — только если внутри враги.</li>
+            <li>Члены ГП обязаны быть в голосовом канале дискорда, дублировать речь в игру.</li>
+            <li>Запрещены цифры в позывном, баги с "карликом", кормление без ведома, матрешки (контейнер в контейнере).</li>
+        </ul>
+    </div>
+
+    <div id="factions" class="rules-section">
+        <h2>🏛️ Устав группировок</h2>
+        <ul>
+            <li>Лидер отвечает за каждого бойца. Максимум 15 человек в ГП.</li>
+            <li>Рекрутство: 3 дня испытательного срока, повязка ГП, статус не ниже Опытный.</li>
+            <li>Неактив более месяца → РПК и исключение.</li>
+            <li>Фанатичные ГП (Монолит, Грех) не могут заключать союзы, заходить на Болота и Тёмную Лощину без разрешения.</li>
+            <li>Запрещено продавать броню/шевроны своей ГП. Склад ГП — общее имущество.</li>
+            <li>Союзы и нейтралитет: нейтралитет до 3 дней, не даёт права совместного ПВО. Союз — только через куратора.</li>
+        </ul>
+    </div>
+
+    <div id="faction-charters" class="rules-section">
+        <h2>📜 Устав фракций — заповеди Зоны</h2>
+        <p style="margin-bottom: 1rem;">Выбери свой путь, сталкер. Каждая группировка следует своим законам.</p>
+        <div class="faction-grid">
+            <div class="faction-card"><h3>🔰 ДОЛГ</h3><ul><li>Дисциплина и порядок. Изоляция Зоны.</li><li>Безусловное подчинение командиру.</li><li>Запрет контрабанды артефактов.</li><li>Ежедневная поверка в 20:00.</li></ul><div class="faction-note">⚙️ «Чистильщики» аномалий</div></div>
+            <div class="faction-card"><h3>🌿 СВОБОДА</h3><ul><li>Свобода выбора, анархия, братство.</li><li>Не мешай другим исследовать Зону.</li><li>Внутренние драки караются.</li><li>Трофей твой, информацией делись.</li></ul><div class="faction-note">📦 Торговля артефактами без пошлин</div></div>
+            <div class="faction-card"><h3>💣 НАЁМНИКИ</h3><ul><li>Контракт священен. Невыполнение = изгнание.</li><li>Без оплаты в конфликты не вступать.</li><li>Кодекс молчания о заказчике.</li></ul><div class="faction-note">🔫 Профессионалы</div></div>
+            <div class="faction-card"><h3>⬜ МОНОЛИТ</h3><ul><li>Воля Монолита — абсолютный закон.</li><li>Неповиновение карается мгновенно.</li><li>Артефакты только для жертвоприношений.</li></ul><div class="faction-note">🔥 фанатики</div></div>
+            <div class="faction-card"><h3>🔬 УЧЁНЫЕ (ОБУ)</h3><ul><li>Нейтралитет, если не атакуют.</li><li>Научные данные — приоритет.</li><li>Сопровождение караванов обязательно.</li></ul><div class="faction-note">📡 исследователи</div></div>
+            <div class="faction-card"><h3>🌌 ЧИСТОЕ НЕБО</h3><ul><li>Баланс Зоны, не убивать мутантов без нужды.</li><li>Помощь новичкам в аномалиях.</li></ul><div class="faction-note">📖 хранители знаний</div></div>
+            <div class="faction-card"><h3>💀 РЕНЕГАТЫ</h3><ul><li>Сила и хитрость — закон.</li><li>Предательство клана = смерть.</li><li>Набеги только в маскировке.</li></ul><div class="faction-note">🚫 вне закона</div></div>
+        </div>
+    </div>
+
+    <footer>
+        ⚡ REBORN | S.T.A.L.K.E.R RolePlay — полный свод правил. Незнание не освобождает от кары Зоны.<br>
+        Версия 3.0 · Устав принят на Сходке Группировок · Аномальный фон · Гейгер-счётчик встроен
+    </footer>
+</div>
+
+<script>
+    (function(){
+        // ---------- АНИМАЦИЯ РАДИАЦИИ (меняем значение каждые 2-3 сек) ----------
+        const radiationLevels = [3.6, 5.8, 12.4, 18.9, 27.5, 36.2, 48.7, 65.3, 82.1, 99.9, 125.0, 250.0];
+        let radIndex = 0;
+        const radSpan = document.getElementById('radiationValue');
+        const radBadgeDiv = document.getElementById('radBadge');
+        let currentRad = 3.6;
+
+        function updateRadiationDisplay() {
+            let val = radiationLevels[radIndex % radiationLevels.length];
+            if (Math.random() > 0.6) {
+                val = val + (Math.random() * 3 - 1.5);
+                val = Math.max(0.1, Math.min(350, val));
+                val = parseFloat(val.toFixed(1));
+            }
+            currentRad = val;
+            radSpan.textContent = currentRad.toFixed(1);
+            if (currentRad >= 80) {
+                radBadgeDiv.classList.add('critical');
+                radBadgeDiv.classList.remove('high');
+            } else if (currentRad >= 30) {
+                radBadgeDiv.classList.add('high');
+                radBadgeDiv.classList.remove('critical');
+            } else {
+                radBadgeDiv.classList.remove('high', 'critical');
+            }
+            radIndex++;
+        }
+
+        function scheduleRadUpdate() {
+            setTimeout(() => {
+                updateRadiationDisplay();
+                scheduleRadUpdate();
+            }, Math.floor(Math.random() * 1500) + 2000);
+        }
+        updateRadiationDisplay();
+        scheduleRadUpdate();
+
+        // ---------- ЗВУК ГЕЙГЕРА (веб-аудио) ----------
+        let audioCtx = null;
+        let isGeigerActive = false;
+        let nextClickTimeout = null;
+        let gainNode = null;
+
+        function createGeigerClick(volume = 0.25, pitch = 1.0) {
+            if (!audioCtx || !isGeigerActive) return;
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(gainNode ? gainNode : audioCtx.destination);
+            osc.type = 'sine';
+            osc.frequency.value = 1200 + (pitch * 400);
+            gain.gain.setValueAtTime(volume, now);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.08);
+            osc.start();
+            osc.stop(now + 0.08);
+        }
+
+        function getClickParams(radValue) {
+            let intervalMs = 2000;
+            let volume = 0.08;
+            if (radValue < 10) {
+                intervalMs = 1800 + Math.random() * 800;
+                volume = 0.05;
+            } else if (radValue < 30) {
+                intervalMs = 900 + Math.random() * 400;
+                volume = 0.12;
+            } else if (radValue < 60) {
+                intervalMs = 450 + Math.random() * 200;
+                volume = 0.20;
+            } else if (radValue < 100) {
+                intervalMs = 250 + Math.random() * 150;
+                volume = 0.32;
+            } else if (radValue < 200) {
+                intervalMs = 120 + Math.random() * 80;
+                volume = 0.45;
+            } else {
+                intervalMs = 50 + Math.random() * 40;
+                volume = 0.60;
+            }
+            return { interval: Math.max(40, Math.min(2200, intervalMs)), volume: Math.min(0.7, volume) };
+        }
+
+        function geigerLoop() {
+            if (!isGeigerActive || !audioCtx) return;
+            const params = getClickParams(currentRad);
+            createGeigerClick(params.volume, 0.8 + (Math.random() * 0.6));
+            nextClickTimeout = setTimeout(() => geigerLoop(), params.interval);
+        }
+
+        function startGeiger() {
+            if (isGeigerActive) return;
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                gainNode = audioCtx.createGain();
+                gainNode.gain.value = 0.55;
+                gainNode.connect(audioCtx.destination);
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume().then(() => {
+                    isGeigerActive = true;
+                    geigerLoop();
+                }).catch(e => console.warn);
+            } else {
+                isGeigerActive = true;
+                geigerLoop();
+            }
+        }
+
+        function stopGeiger() {
+            isGeigerActive = false;
+            if (nextClickTimeout) {
+                clearTimeout(nextClickTimeout);
+                nextClickTimeout = null;
+            }
+        }
+
+        const toggleBtn = document.getElementById('geigerToggleBtn');
+        let isEnabled = false;
+        toggleBtn.addEventListener('click', () => {
+            if (!isEnabled) {
+                startGeiger();
+                isEnabled = true;
+                toggleBtn.innerHTML = '🔊 Счётчик Гейгера активен | ⏹️ Выключить';
+                toggleBtn.classList.add('active');
+            } else {
+                stopGeiger();
+                isEnabled = false;
+                toggleBtn.innerHTML = '📡 Активировать счётчик Гейгера';
+                toggleBtn.classList.remove('active');
+            }
+        });
+    })();
+</script>
+</body>
+</html>
