@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0f0f14;
+    color: #e0e0e0;
+}
+
+/* Страница входа */
+body.admin-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0a0f;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-form {
+    background: #1e1e2a;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid #2e2e3e;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.error-msg {
+    background: #dc2626;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Навигация в админке */
+.admin-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-nav {
+    background: #1a1a24;
+    border-bottom: 1px solid #2a2a38;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #a855f7;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #c0c0d0;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #2d2d3a;
+    color: white;
+}
+
+/* Основной контент админки */
+.admin-content {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.admin-content h1 {
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Таблица новостей */
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e1e2a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2e2e3e;
+}
+
+.news-table th {
+    background: #2d2d3a;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #d0d0e0;
+}
+
+.news-table td {
+    padding: 15px;
+    border-bottom: 1px solid #2e2e3e;
+}
+
+.news-table tr:last-child td {
+    border-bottom: none;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.btn-icon {
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.btn-icon:hover {
+    opacity: 1;
+}
+
+.btn-icon.delete:hover {
+    color: #ef4444;
+}
+
+/* Формы */
+.news-form {
+    background: #1e1e2a;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #2e2e3e;
+    max-width: 800px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #c0c0d0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    background: #2d2d3a;
+    border: 1px solid #3f3f50;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #a855f7;
+}
+
+.form-group input[type="file"] {
+    background: #2d2d3a;
+    padding: 10px;
+    border-radius: 8px;
+    color: #ccc;
+    width: 100%;
+}
+
+.current-image {
+    margin-top: 10px;
+    background: #2d2d3a;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, opacity 0.2s;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: #a855f7;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #9333ea;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #a855f7;
+    color: #a855f7;
+}
+
+.btn-outline:hover {
+    background: #a855f7;
+    color: white;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+/* Уведомления */
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.alert.success {
+    background: #065f46;
+    color: #d1fae5;
+    border-left: 6px solid #10b981;
+}
+
+.alert.error {
+    background: #7f1d1d;
+    color: #fee2e2;
+    border-left: 6px solid #ef4444;
+}
